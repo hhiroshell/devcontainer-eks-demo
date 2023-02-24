@@ -1,19 +1,19 @@
 {
-	"name": "eks-kubectl",
+  "name": "eks-kubectl",
 
-	"image": "ubuntu:jammy",
+  "image": "ubuntu:jammy",
 
-	"features": {
-		"ghcr.io/devcontainers/features/aws-cli:1": {},
-        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
-	},
+  "features": {
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+  },
 
-	"mounts": [
-        "source=${env:HOME}${env:USERPROFILE}/.aws,target=/root/.aws,type=bind",
-		"source=${env:HOME}${env:USERPROFILE}/.kube,target=/root/.kube,type=bind",
-    ],
+  "mounts": [
+    "source=${env:HOME}${env:USERPROFILE}/.aws,target=/root/.aws,type=bind",
+    "source=${env:HOME}${env:USERPROFILE}/.kube,target=/root/.kube,type=bind",
+  ],
 
-	"postAttachCommand": {
-		"show cli versions": "aws --version && kubectl version --client -o yaml",
-	},
+  "postAttachCommand": {
+    "show cli versions": "aws --version && kubectl version --client -o yaml",
+  },
 }
